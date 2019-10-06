@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
+using SE = SeleniumExtras;
 
 namespace TestSuite.Service
 {
@@ -23,13 +24,14 @@ namespace TestSuite.Service
             };
         }
 
+     
         // Method to use for entering text into fields that permit (and makes sense to) text/data entry
         public void WaitForElementAndSendKeys(string elementLocation, string whatToType)
         {
             var waitForElementToLoad = new WebDriverWait(chrome, TimeSpan.FromSeconds(secondsToWait));
             try
             {
-                var selectedElement = waitForElementToLoad.Until(ExpectedConditions.ElementToBeClickable(By.Id(elementLocation)));
+                var selectedElement = waitForElementToLoad.Until(SE.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath(elementLocation)));
 
                 if (selectedElement.Displayed && selectedElement.Enabled)
                 {
