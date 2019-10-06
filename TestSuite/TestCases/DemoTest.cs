@@ -1,27 +1,15 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using TestSuite.Service;
 
-namespace TestSuite
+namespace TestSuite 
 {
     [TestFixture]
-    public class DemoTest 
+    public class DemoTest : ChromeService
     {
-        public string chromeDriverPath = @"C:\Automation";
-        public static string testURL = "https://demoqa.com/html-contact-form/";
-        public static IWebDriver chrome;
-
-
-        // SetUp will run before the tests are called
-        [SetUp]
-        public void SetupAndPrepareChromeDriver()
-        {
-            chrome = new ChromeDriver(chromeDriverPath)
-            {
-                Url = testURL
-            };
-        }
-
+        
+      
         [Test, Order(1)]
         public void FirstContactFormTest()
         {
