@@ -41,5 +41,12 @@ namespace TestSuite.Service
             driverInstance.Dispose();
         }
 
+        // Javascript used to assess whether the document (page) is ready (complete)
+        // This method can be used to wait for page loads (usually after a submit button)
+        public void WaitForPageLoad()
+        {
+            new WebDriverWait(GetDriver(), TimeSpan.FromMinutes(1)).Until(
+            d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+        }
     }
 }
