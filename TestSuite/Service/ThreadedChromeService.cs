@@ -7,7 +7,7 @@ using NUnit.Framework;
 
 namespace TestSuite.Service
 {
-    class ThreadedChromeService
+    public class ThreadedChromeService
     {
         readonly int secondsToWait = 5;
 
@@ -47,6 +47,27 @@ namespace TestSuite.Service
         {
             new WebDriverWait(GetDriver(), TimeSpan.FromMinutes(1)).Until(
             d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
+        }
+
+        // Method to use for entering text into fields that permit (and makes sense to) text/data entry
+        public void WaitForElementAndSendKeys(string elementLocation, string whatToType)
+        {
+            var waitForElementToLoad = new WebDriverWait(GetDriver(), TimeSpan.FromSeconds(secondsToWait));
+            try
+            {
+                var selectedElement = waitForElementToLoad.Until(SE.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath(elementLocation)));
+
+                if (selectedElement.Displayed && selectedElement.Enabled)
+                {
+
+                    selectedElement.SendKeys(whatToType);
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.Write("ELEMENT NOT FOUND", elementLocation);
+            }
+
         }
     }
 }

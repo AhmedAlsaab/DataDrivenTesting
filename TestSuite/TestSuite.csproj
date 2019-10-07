@@ -65,11 +65,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Service\ChromeService.cs" />
+    <Compile Include="Service\ThreadedChromeService.cs" />
     <Compile Include="TestCases\OrderedTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCases\LoopedTests.cs" />
     <Compile Include="TestCases\ParallelTests.cs" />
     <Compile Include="Web\ContactForm.cs" />
+    <Compile Include="Web\ThreadedContactForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
