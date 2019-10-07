@@ -1,15 +1,13 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using TestSuite.Service;
 using TestSuite.Web;
 
-namespace TestSuite 
+namespace TestSuite
 {
     // Basic Test that combines the Service and Contact Form class to pass different data sets into the targetted WebSite (Contact Form)
     // First approach towards Data Driven Tests
 
-        // TEst
+
     [TestFixture]
     public class OrderedTests : ChromeService
     {

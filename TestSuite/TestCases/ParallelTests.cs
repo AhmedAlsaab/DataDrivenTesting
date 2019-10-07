@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace TestSuite.TestCases
 {
     [TestClass]
-    public class UnitTest1
+    public class ParallelTests
     {
         [TestMethod]
         public void TestMethod1()

@@ -1,14 +1,33 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
+using TestSuite.Service;
+using TestSuite.Web;
 
 namespace TestSuite.TestCases
 {
-    [TestClass]
-    public class UnitTest1
+    [TestFixture]
+    public class LoopedTests : ChromeService
     {
-        [TestMethod]
-        public void TestMethod1()
+        ContactForm contactForm = new ContactForm();
+
+        // Testing the same targetted sections
+        // But with different data each loop
+
+        [Test]
+        public void LoopingThisTest()
         {
+            for (int i = 2; i < 5; i++)
+            {
+                SetupAndPrepareChromeDriver();
+                contactForm.InsertData(i);
+                TearDown();
+            }
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            chrome.Close();
+            chrome.Quit();
         }
     }
 }
