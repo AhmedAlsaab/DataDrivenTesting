@@ -8,6 +8,7 @@
 * Build status
 * Requirements
 * Examples
+* Requirements
 * Installation
 * How to run
 * Contributors
@@ -62,6 +63,11 @@ The repo revolves around automating a short contact form in 3 different ways, us
  ```
 
 
+## Requirements
+
+* This project uses .NET 4.5
+* Make sure you have a downloaded copy of ChromeDriver (compatabile with your Chrome version)
+* Excel
 
 ## Installation
 
@@ -69,13 +75,13 @@ Clone or download the repository. Find the solution (sln) and open in a compatab
 
 ## How to run
 
-Select a test after compiling (SHIFT + B to compile) and right click to DEBUG or RUN
-
+* Ensure all file locations/paths are set correct (ChromeDriver & Excel)
+* Compile (SHIFT + B in VS)
+* Select a test and right click to DEBUG or RUN
 
 ## Contributors
 
 Ahmed Alsaab
-
 
 ## License
 
