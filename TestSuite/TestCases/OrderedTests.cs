@@ -8,8 +8,10 @@ namespace TestSuite
 {
     // Basic Test that combines the Service and Contact Form class to pass different data sets into the targetted WebSite (Contact Form)
     // First approach towards Data Driven Tests
+
+        // TEst
     [TestFixture]
-    public class DemoTest : ChromeService
+    public class OrderedTests : ChromeService
     {
 
         ContactForm contactForm = new ContactForm();
