@@ -3,7 +3,7 @@ using TestSuite.Web;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Chrome;
 using TestSuite.Service;
-
+using System.Collections.Generic;
 
 namespace TestSuite.TestCases
 {
@@ -25,9 +25,23 @@ namespace TestSuite.TestCases
         [Test]
         public void ParallTesting()
         {
+
+            var chromeOptions = new ChromeOptions();
+
+            chromeOptions.AddArguments(new List<string>() {
+           "--window-size=1920,1080",
+           "--start-maximized",
+           "--proxy-server='direct://'",
+           "--disable-extensions",
+           "--proxy-bypass-list=*",
+            "--disable-gpu",
+            "no-sandbox",
+            "headless"});
+
+
             Parallel.For(startRecord, endRecord, i =>
             {
-                SetDriver(new ChromeDriver(chromeDriverPath));
+                SetDriver(new ChromeDriver(chromeDriverPath, chromeOptions));
                 GetDriver().Url = testURL;
                 TrackThreads();
                 WaitForPageLoad();
