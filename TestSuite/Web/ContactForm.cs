@@ -8,7 +8,7 @@ using ExcelOperations;
 
 namespace TestSuite.Web
 {
-    class ContactForm
+    public class ContactForm
     {
         ExcelFileReader excel = new ExcelFileReader();
         ChromeService methodToUse = new ChromeService();
@@ -33,7 +33,7 @@ namespace TestSuite.Web
             methodToUse.WaitForElementAndSendKeys(countryLocator, country);
 
             string subject = excel.ExcelLookup(4, row, 1);
-            string subjectLocator = "//input[contains(@id, 'subject') and contains(@placeholder, 'Write something')]";
+            string subjectLocator = "//textarea[contains(@id, 'subject') and contains(@placeholder, 'Write something')]";
             methodToUse.WaitForElementAndSendKeys(subjectLocator, subject);
 
 
