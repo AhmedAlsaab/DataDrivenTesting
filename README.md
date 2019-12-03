@@ -13,9 +13,15 @@
 * How to run
 * Contributors
 
+## Full Version
+
+The full version with a number of functions and features is only available on a private repository! Here's a screenshot of the GUI for the full version.
+
+![GUI Preview](https://i.imgur.com/H6mmqrH.png)
+
 ## Introduction
 
-This repository is a lightweight example of the work I do for my employer in a private repo. I felt like sharing what I have been working on in an effective but concise manner. None of the techniques or code written are by any means examples of 'good code'. In fact, looping tests is debatable! There are better ways of accomplish what I set out to do but It's what I've been able to cough up so far.
+This repository is a lightweight example of the work I do for my employer in a private repo. I felt like sharing what I have been working on in an effective but concise manner. None of the techniques or code written are by any means examples of 'good code' but have been able to accomplish my set out requirements.
 
 The repo revolves around automating a short contact form in 3 different ways, using Excel as a data file:
 
