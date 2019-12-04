@@ -13,11 +13,6 @@
 * How to run
 * Contributors
 
-## Full Version
-
-The full version with a number of functions and features is only available on a private repository! Here's a screenshot of the GUI for the full version.
-
-![GUI Preview](https://i.imgur.com/ecyYy4G.png)
 
 ## Introduction
 
